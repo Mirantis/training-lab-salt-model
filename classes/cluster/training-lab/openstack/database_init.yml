@@ -1,0 +1,3 @@
+classes:
+- system.mysql.client.single
+- cluster.training-lab.infra.backup.client_mysql

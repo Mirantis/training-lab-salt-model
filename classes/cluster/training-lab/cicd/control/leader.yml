@@ -1,0 +1,61 @@
+classes:
+  # Services
+  - system.docker.client
+  # Docker services
+  - system.docker.swarm.stack.docker
+  - system.docker.swarm.stack.gerrit
+  - system.docker.swarm.stack.jenkins
+
+  # Jenkins
+  - system.jenkins.master.config
+  - system.jenkins.client
+  - system.jenkins.client.credential.gerrit
+  - system.jenkins.client.credential.salt
+  # Jobs
+  - system.jenkins.client.job.git-mirrors.downstream.pipelines
+  - system.jenkins.client.job.deploy.openstack
+  - system.jenkins.client.job.deploy.update
+  # Security
+  - system.jenkins.client.user.admin
+  # Slaves
+  - system.jenkins.client.node
+
+  # Gerrit
+  - system.gerrit.client
+  - system.gerrit.client.project.ci
+
+  - system.docker.swarm.master
+
+  - cluster.training-lab.infra
+  - cluster.training-lab.cicd.control
+
+parameters:
+  _param:
+    # Kqueen
+    # Using default mail server with default port 10025
+    mail_server_hostname: mail
+    kqueen_ui_mail_host: ${_param:mail_server_hostname}
+    # Jenkins
+    jenkins_slave_user: admin
+    jenkins_client_user: admin
+    jenkins_slave_password: ${_param:jenkins_admin_password}
+    jenkins_client_password: ${_param:jenkins_admin_password}
+    jenkins_admin_email: ${_param:admin_email}
+    aptly_api_port: 8080
+    aptly_public_port: 80
+    jenkins_admin_public_key: ${_param:jenkins_admin_public_key_generated}
+    jenkins_admin_private_key: ${_param:jenkins_admin_private_key_generated}
+    # Jobs params
+    jenkins_gerrit_url: ssh://admin@${_param:haproxy_gerrit_bind_host}:${_param:haproxy_gerrit_ssh_bind_port}
+
+    # Gerrit
+    gerrit_admin_email: ${_param:admin_email}
+    gerrit_public_host: https://${_param:nginx_proxy_gerrit_server_site_host}:${_param:nginx_proxy_gerrit_server_site_port}
+    gerrit_admin_public_key: ${_param:jenkins_admin_public_key}
+    gerrit_admin_private_key: ${_param:jenkins_admin_private_key}
+    gerrit_auth_type: DEVELOPMENT_BECOME_ANY_ACCOUNT
+  jenkins:
+    client:
+      lib:
+        pipeline-library:
+          branch: ${_param:jenkins_pipelines_branch}
