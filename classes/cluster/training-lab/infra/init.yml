@@ -65,12 +65,14 @@ parameters:
       enabled: true
       type: eth
       proto: dhcp
+      mtu: 1450
     linux_single_interface:
       enabled: true
       type: eth
       proto: static
       address: ${_param:single_address}
       netmask: ${_param:control_network_netmask}
+      mtu: 1450
       name_servers:
         - ${_param:dns_server01}
         - ${_param:dns_server02}
