@@ -8,4 +8,4 @@ parameters:
     system:
       name: cfg01
       domain: 1.edu.mirantis.net
-    
+
