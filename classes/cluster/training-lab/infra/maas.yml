@@ -9,6 +9,7 @@ parameters:
     maas_cluster_region_port: ${_param:maas_region_port}
   maas:
     cluster:
+      saltstack_repo_xenial: "http://mirror.mirantis.com/${_param:apt_mk_version}/saltstack-2016.3/xenial/ xenial main"
       region:
         host: ${_param:deploy_address}:${_param:maas_cluster_region_port}
     region:
@@ -16,55 +17,55 @@ parameters:
         00-maas-05-simplify-network-interfaces: /etc/maas/files/commisioning_scripts/00-maas-05-simplify-network-interfaces
       bind:
         host: ${_param:deploy_address}:${_param:maas_region_port}
-      fabrics:
-        deploy_network:
-          description: Fabric for deploy_network
-      machines:
-        vm-pxe1-ruzickap-01-kvm01:
-          pxe_interface_mac: 52:54:00:00:A1:A1
-          power_parameters:
-            power_address: qemu+tcp://10.0.0.11/system
-            power_type: virsh
-        vm-pxe2-ruzickap-01-kvm01:
-          pxe_interface_mac: 52:54:00:00:A1:A2
-          power_parameters:
-            power_address: qemu+tcp://10.0.0.11/system
-            power_type: virsh
-        vm-pxe3-ruzickap-01-kvm01:
-          pxe_interface_mac: 52:54:00:00:A1:A3
-          power_parameters:
-            power_address: qemu+tcp://10.0.0.11/system
-            power_type: virsh
-        vm-pxe1-ruzickap-01-kvm02:
-          pxe_interface_mac: 52:54:00:00:A2:A1
-          power_parameters:
-            power_address: qemu+tcp://10.0.0.12/system
-            power_type: virsh
-        vm-pxe2-ruzickap-01-kvm02:
-          pxe_interface_mac: 52:54:00:00:A2:A2
-          power_parameters:
-            power_address: qemu+tcp://10.0.0.12/system
-            power_type: virsh
-        vm-pxe3-ruzickap-01-kvm02:
-          pxe_interface_mac: 52:54:00:00:A2:A3
-          power_parameters:
-            power_address: qemu+tcp://10.0.0.12/system
-            power_type: virsh
-        vm-pxe1-ruzickap-01-kvm03:
-          pxe_interface_mac: 52:54:00:00:A3:A1
-          power_parameters:
-            power_address: qemu+tcp://10.0.0.13/system
-            power_type: virsh
-        vm-pxe2-ruzickap-01-kvm03:
-          pxe_interface_mac: 52:54:00:00:A3:A2
-          power_parameters:
-            power_address: qemu+tcp://10.0.0.13/system
-            power_type: virsh
-        vm-pxe3-ruzickap-01-kvm03:
-          pxe_interface_mac: 52:54:00:00:A3:A3
-          power_parameters:
-            power_address: qemu+tcp://10.0.0.13/system
-            power_type: virsh
+      # fabrics:
+      #   deploy_network:
+      #     description: Fabric for deploy_network
+      # machines:
+      #   vm-pxe1-ruzickap-01-kvm01:
+      #     pxe_interface_mac: 52:54:00:00:A1:A1
+      #     power_parameters:
+      #       power_address: qemu+tcp://10.0.0.11/system
+      #       power_type: virsh
+      #   vm-pxe2-ruzickap-01-kvm01:
+      #     pxe_interface_mac: 52:54:00:00:A1:A2
+      #     power_parameters:
+      #       power_address: qemu+tcp://10.0.0.11/system
+      #       power_type: virsh
+      #   vm-pxe3-ruzickap-01-kvm01:
+      #     pxe_interface_mac: 52:54:00:00:A1:A3
+      #     power_parameters:
+      #       power_address: qemu+tcp://10.0.0.11/system
+      #       power_type: virsh
+      #   vm-pxe1-ruzickap-01-kvm02:
+      #     pxe_interface_mac: 52:54:00:00:A2:A1
+      #     power_parameters:
+      #       power_address: qemu+tcp://10.0.0.12/system
+      #       power_type: virsh
+      #   vm-pxe2-ruzickap-01-kvm02:
+      #     pxe_interface_mac: 52:54:00:00:A2:A2
+      #     power_parameters:
+      #       power_address: qemu+tcp://10.0.0.12/system
+      #       power_type: virsh
+      #   vm-pxe3-ruzickap-01-kvm02:
+      #     pxe_interface_mac: 52:54:00:00:A2:A3
+      #     power_parameters:
+      #       power_address: qemu+tcp://10.0.0.12/system
+      #       power_type: virsh
+      #   vm-pxe1-ruzickap-01-kvm03:
+      #     pxe_interface_mac: 52:54:00:00:A3:A1
+      #     power_parameters:
+      #       power_address: qemu+tcp://10.0.0.13/system
+      #       power_type: virsh
+      #   vm-pxe2-ruzickap-01-kvm03:
+      #     pxe_interface_mac: 52:54:00:00:A3:A2
+      #     power_parameters:
+      #       power_address: qemu+tcp://10.0.0.13/system
+      #       power_type: virsh
+      #   vm-pxe3-ruzickap-01-kvm03:
+      #     pxe_interface_mac: 52:54:00:00:A3:A3
+      #     power_parameters:
+      #       power_address: qemu+tcp://10.0.0.13/system
+      #       power_type: virsh
 
 # linux:
 #   network:
