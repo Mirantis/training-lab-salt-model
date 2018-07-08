@@ -30,7 +30,7 @@ parameters:
     infra_config_address: 10.0.1.15
     infra_config_deploy_address: 10.0.0.15
 
-    cluster_domain: 1.edu.mirantis.net
+    cluster_domain: edu.mirantis.net
     cluster_name: training-lab
     cluster_public_host: ${_param:openstack_proxy_address}
     control_network_netmask: 255.255.255.0
