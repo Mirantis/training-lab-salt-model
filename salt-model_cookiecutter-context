@@ -75,7 +75,7 @@ default_context:
     8biGaec52ZiDPYFcxoWMZQLB3GWOrIEJD5fETSvJONKU4GGBL3XhHw==
     -----END RSA PRIVATE KEY-----
   cicd_public_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDHEopy+0HmWK5BJlebgbovNU2XRf0ql5LvyPbrjkJpFt32EANeRII+RI1TUd401O/W3r5y9Ukg2pY4qGd+WQjrHiAx8/qw07VkUYoVLILuyKt5AnkKR3iGbtgXve37x66huMsf6JzGTTXY4klBxfeu8fmPp57FbDL+RyoXCtvF778HmPMDhTTIe/0CE5824QAb5RzBkJqD5AIJp15n8M8VxumCPIuE6pJI9xM1ILOB9BqzTRcpYo1hDvrtM452ElAnIbkvcYNev8aZngDT91kOW5aCkvoZ7HQavobGnY0ZHioduA+e30ZwG2Keo83lVGf2f6dKMj/XKHdvjOr5//Ez
-  cluster_domain: edu.mirantis.net
+  cluster_domain: tng.mirantis.com
   cluster_name: training-lab
   compute_bond_mode: active-backup
   compute_padding_with_zeros: 'True'

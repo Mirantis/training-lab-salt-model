@@ -7,5 +7,5 @@ parameters:
   linux:
     system:
       name: cfg01
-      domain: edu.mirantis.net
+      domain: tng.mirantis.com
 
