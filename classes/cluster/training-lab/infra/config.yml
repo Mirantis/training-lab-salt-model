@@ -42,6 +42,14 @@ parameters:
     salt_api_password: 0QpBut5ncFv0UHw62SrtQmyMiqQ7Ng5q
     jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
     jenkins_pipeline_library_url: git@cfg01:/home/repo/mcp-ci/pipeline-library
+  linux:
+    system:
+      package:
+        libvirt-bin:
+          version: latest
+      service:
+        libvirt-bin:
+          status: dead
   jenkins:
     client:
       lib:
