@@ -1,5 +1,4 @@
 classes:
   - system.docker.swarm.manager
-  - cluster.training-lab.infra
   - cluster.training-lab.cicd.control
 

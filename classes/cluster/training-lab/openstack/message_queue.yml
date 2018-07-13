@@ -2,9 +2,11 @@ classes:
 - system.linux.system.repo.mcp.extra
 - system.linux.system.repo.mcp.apt_mirantis.openstack
 - system.linux.system.repo.mcp.apt_mirantis.ubuntu
-- system.linux.system.repo.mcp.apt_mirantis.saltstack_2016_3
+- system.linux.system.repo.mcp.apt_mirantis.saltstack
 - system.rabbitmq.server.cluster
 - system.rabbitmq.server.vhost.openstack
+- system.rabbitmq.server.vhost.openstack.rpc_ha
+- system.rabbitmq.server.vhost.openstack.ha_for_all_queues
 - cluster.training-lab.infra
 - cluster.training-lab.openstack.networking.virtual
 parameters:

@@ -2,71 +2,52 @@
 classes:
 - system.linux.system.repo.mcp.apt_mirantis.maas
 - system.maas.region.single
-- cluster.training-lab.infra
+- system.maas.region.boot_sources.maas_ephemeral_v3.bss_xenial
+- system.maas.region.boot_sources.maas_ephemeral_v3
 parameters:
   _param:
     maas_region_port: 5240
     maas_cluster_region_port: ${_param:maas_region_port}
+    maas_name: ${_param:infra_config_hostname}
+    maas_gateway: 10.0.0.11
   maas:
-    cluster:
-      saltstack_repo_xenial: "http://mirror.mirantis.com/${_param:apt_mk_version}/saltstack-2016.3/xenial/ xenial main"
-      region:
-        host: ${_param:deploy_address}:${_param:maas_cluster_region_port}
     region:
       commissioning_scripts:
         00-maas-05-simplify-network-interfaces: /etc/maas/files/commisioning_scripts/00-maas-05-simplify-network-interfaces
       bind:
-        host: ${_param:deploy_address}:${_param:maas_region_port}
-      # fabrics:
-      #   deploy_network:
-      #     description: Fabric for deploy_network
-      # machines:
-      #   vm-pxe1-ruzickap-01-kvm01:
-      #     pxe_interface_mac: 52:54:00:00:A1:A1
-      #     power_parameters:
-      #       power_address: qemu+tcp://10.0.0.11/system
-      #       power_type: virsh
-      #   vm-pxe2-ruzickap-01-kvm01:
-      #     pxe_interface_mac: 52:54:00:00:A1:A2
-      #     power_parameters:
-      #       power_address: qemu+tcp://10.0.0.11/system
-      #       power_type: virsh
-      #   vm-pxe3-ruzickap-01-kvm01:
-      #     pxe_interface_mac: 52:54:00:00:A1:A3
-      #     power_parameters:
-      #       power_address: qemu+tcp://10.0.0.11/system
-      #       power_type: virsh
-      #   vm-pxe1-ruzickap-01-kvm02:
-      #     pxe_interface_mac: 52:54:00:00:A2:A1
-      #     power_parameters:
-      #       power_address: qemu+tcp://10.0.0.12/system
-      #       power_type: virsh
-      #   vm-pxe2-ruzickap-01-kvm02:
-      #     pxe_interface_mac: 52:54:00:00:A2:A2
-      #     power_parameters:
-      #       power_address: qemu+tcp://10.0.0.12/system
-      #       power_type: virsh
-      #   vm-pxe3-ruzickap-01-kvm02:
-      #     pxe_interface_mac: 52:54:00:00:A2:A3
-      #     power_parameters:
-      #       power_address: qemu+tcp://10.0.0.12/system
-      #       power_type: virsh
-      #   vm-pxe1-ruzickap-01-kvm03:
-      #     pxe_interface_mac: 52:54:00:00:A3:A1
-      #     power_parameters:
-      #       power_address: qemu+tcp://10.0.0.13/system
-      #       power_type: virsh
-      #   vm-pxe2-ruzickap-01-kvm03:
-      #     pxe_interface_mac: 52:54:00:00:A3:A2
-      #     power_parameters:
-      #       power_address: qemu+tcp://10.0.0.13/system
-      #       power_type: virsh
-      #   vm-pxe3-ruzickap-01-kvm03:
-      #     pxe_interface_mac: 52:54:00:00:A3:A3
-      #     power_parameters:
-      #       power_address: qemu+tcp://10.0.0.13/system
-      #       power_type: virsh
-
+        host: ${_param:deploy_address}
+        port: ${_param:maas_region_port}
+      maas_config:
+        maas_name: ${_param:maas_name}
+      subnets:
+        deploy_network:
+          name: deploy_network
+          cidr: 10.0.0.0/24
+          fabric: ${maas:region:fabrics:deploy_fabric:name}
+          gateway_ip: ${_param:maas_gateway}
+          ipranges:
+            1:
+              end: 10.0.0.254
+              start: 10.0.0.1
+              type: dynamic
+              subnet: ${maas:region:subnets:deploy_network:name}
+      fabrics:
+        deploy_fabric:
+          name: deploy_fabric
+          description: 'Fabric for deploy_network'
+          vlans:
+            0:
+              name: 'vlan 0'
+              description: "Deploy VLAN"
+              dhcp: True
+              # FXIME: after refactoring domain module, it should
+              # be fixed to exactly use FQDN, not only hostname
+              primary_rack: "${linux:network:hostname}"
+      machines:
+        <<LOAD_FROM_FILE>>
+    cluster:
+      region:
+        host: ${_param:deploy_address}:${_param:maas_cluster_region_port}
 # linux:
 #   network:
 #     interface:
@@ -81,26 +62,3 @@ parameters:
 #         name_servers:
 #         - ${_param:dns_server01}
 #         - ${_param:dns_server02}
-### Sample MaaS Configuration
-#  maas:
-#    region:
-#      subnets:
-#        deploy_network:
-#          cidr: 172.17.44.0/24
-#          fabric: deploy_network
-#          gateway_ip: 172.17.44.1
-#          iprange:
-#            end: 172.17.44.200
-#            start: 172.17.44.92
-#      fabrics:
-#        deploy_network:
-#          description: Fabric for deploy_network
-#      machines:
-#        kvm02:
-#          interface:
-#            mac: 00:25:90:eb:92:4a
-#          power_parameters:
-#            power_address: ipmi_ip
-#            power_password: password
-#            power_type: ipmi
-#            power_user: engineer

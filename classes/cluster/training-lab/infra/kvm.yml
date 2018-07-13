@@ -3,24 +3,17 @@ classes:
 - system.linux.system.repo.mcp.extra
 - system.linux.system.repo.mcp.apt_mirantis.openstack
 - system.linux.system.repo.mcp.apt_mirantis.ubuntu
+- system.linux.system.repo.mcp.apt_mirantis.saltstack
 - system.linux.system.repo.mcp.apt_mirantis.glusterfs
-- system.linux.system.repo.mcp.apt_mirantis.saltstack_2016_3
-- service.keepalived.cluster.single
-- system.glusterfs.server.cluster
-- system.glusterfs.server.volume.salt_pki
 - system.salt.control.virt
-- system.glusterfs.server.volume.glance
-- system.glusterfs.server.volume.keystone
-- system.glusterfs.server.volume.backup
 - system.salt.control.cluster.openstack_control_cluster
 - system.salt.control.cluster.openstack_proxy_cluster
 - system.salt.control.cluster.openstack_database_cluster
 - system.salt.control.cluster.openstack_message_queue_cluster
-- system.salt.control.sizes.openstack
 #- system.salt.control.cluster.openstack_upgrade_single
+- system.salt.control.sizes.openstack.compact
 - system.salt.control.cluster.cicd_control_cluster
-- cluster.training-lab.cicd.gluster
-- system.salt.control.sizes.cicd
+- system.salt.control.sizes.cicd.compact
 - cluster.training-lab.infra
 - cluster.training-lab.infra.networking.kvm
 parameters:
@@ -29,35 +22,9 @@ parameters:
     cluster_node01_address: ${_param:infra_kvm_node01_address}
     cluster_node02_address: ${_param:infra_kvm_node02_address}
     cluster_node03_address: ${_param:infra_kvm_node03_address}
-    keepalived_vip_interface: br-ctl
-    keepalived_vip_virtual_router_id: 69
     deploy_nic: eth0
     primary_first_nic: eth1
     primary_second_nic: eth2
-    salt_control_size_cpu_openstack_control: 8
-    salt_control_size_ram_openstack_control: 32768
-    salt_control_size_disk_profile_openstack_control: small
-    salt_control_size_net_profile_openstack_control: default
-    salt_control_size_cpu_openstack_database: 8
-    salt_control_size_ram_openstack_database: 16384
-    salt_control_size_disk_profile_openstack_database: large
-    salt_control_size_net_profile_openstack_database: default
-    salt_control_size_cpu_openstack_message_queue: 8
-    salt_control_size_ram_openstack_message_queue: 32768
-    salt_control_size_disk_profile_openstack_message_queue: small
-    salt_control_size_net_profile_openstack_message_queue: default
-    salt_control_size_cpu_openstack_proxy: 4
-    salt_control_size_ram_openstack_proxy: 8192
-    salt_control_size_disk_profile_openstack_proxy: small
-    salt_control_size_net_profile_openstack_proxy: default
-    salt_control_size_cpu_openstack_upgrade: 8
-    salt_control_size_ram_openstack_upgrade: 16384
-    salt_control_size_disk_profile_openstack_upgrade: medium
-    salt_control_size_net_profile_openstack_upgrade: default
-    salt_control_size_cpu_cicd_control: 8
-    salt_control_size_ram_cicd_control: 12288
-    salt_control_size_disk_profile_cicd_control: large
-    salt_control_size_net_profile_cicd_control: default
   salt:
     control:
       cluster:

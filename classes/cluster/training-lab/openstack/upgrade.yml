@@ -2,7 +2,7 @@ classes:
 - system.linux.system.repo.mcp.extra
 - system.linux.system.repo.mcp.apt_mirantis.openstack
 - system.linux.system.repo.mcp.apt_mirantis.ubuntu
-- system.linux.system.repo.mcp.apt_mirantis.saltstack_2016_3
+- system.linux.system.repo.mcp.apt_mirantis.saltstack
 - system.memcached.server.single
 - system.heat.server.single
 - system.keystone.server.single
@@ -27,7 +27,7 @@ parameters:
     openstack_control_address: ${_param:openstack_upgrade_node01_address}
     public_address: ${_param:openstack_upgrade_node01_address}
     cluster_public_protocol: http
-    openstack_version: ocata
+    openstack_version: pike
   glance:
     server:
       storage:

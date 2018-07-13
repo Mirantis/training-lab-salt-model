@@ -5,33 +5,36 @@ parameters:
     xtrabackup_remote_server: ${_param:infra_kvm_node03_address}
     root_private_key: |
       -----BEGIN RSA PRIVATE KEY-----
-      MIIEpAIBAAKCAQEAtDEx8RI8KAkovtIJHEihownXyv8j7gYJYtj4C07liFe77p4t
-      w1/vN1cqiAJaJn0rtQF7ZgPKno+73DtzfGEFA8CYi3wYazBrz7Pc0cUYQbRJyPGi
-      j8Vu0r6obaKPU+Vp58bC6rYtFZDiOY8gDkZtrNXghEfdRZwAtiT94Y+p6qGTivZD
-      82WF+OH+aAhxt06qNnCBV3GFKdjeEmUZIWDEkTefru2FUhboFxaAR/cWzcYK6fF/
-      8IcAk8dyeCothqO+0UHMnPCbJTRfTJYR9AAkwN/aO2134mfXUiK8GCtqBPm+Tpab
-      fu1gLD1iu3+Nqx2YGuOszG5biToCqeAUtXuOAwIDAQABAoIBAEewkugQkzJygm14
-      7vr7wqM1FU/ENq1KZY2YOQd2ukeGcFS9RgPHNUtVOKyoEunhPvRixI+PzptLIDi8
-      xnOjvfUCOS61jpmGyD34l1A2FDJ/4iM6T6zXpgHerPABjviX+4ylPYNYO5Oq8vZn
-      hR9o0dXDufGnDdfV+0p8aS3GlJmuRyhOFf3smNj9Xt6c3SOQPNAwYhxSswMKsx0L
-      4+/qYSa/tMsI1L+lSSMI6MDMUsfX1IfDLNFdNcqw69c6TQsbI4Rt1cG77KwU0t9o
-      KF4tBqFVoi9PuL80EZIuMyxARTNAENnywtNpyJIOgxCJ9L4XZNXkw6EqXFg4wcou
-      wd3zfDECgYEA8BraPbNG21Z38h3VWyT6eJOFfcufgvjuRjmeui47BXdaU7chCVTf
-      z/Qq7OKAaJFjXooyZCzRP2nzxVHjzGIuCfSx749FNmKNsvTzenWgS4Nf2INI7CJt                                                         
-      ApfdQuHqWNih5PaEMF3xl5A10FDVHEupK3lzmooTE3pHydNBAQaaETUCgYEAwB76                                                         
-      rcnN+RD8GuZFvsXhb1l3UCkZoQ1glj00j5JMKhvCwLgF+12rQXLC7jKxYMTBHu/X                                                                                                                         
-      aaMiBLaxCFHn2NoTQ1P6NmdBBOUyTGWCCWu+0nFHVzoE2iYo4/GCyORgMjncN5Q9                                                                                                                         
-      4sqd19lS5+c/tNLRQZg2bGkjesYGfJgsFeUkgVcCgYEAlPx0k3ic7Rk4kFoGu+m0                                                                                                                         
-      KgGQAcDKF+ETKSwz29837Gpk+DFYJIwv3L/rqtXZTAl7GXyzTAmrRagfBT+NFJOP                                                                                                                         
-      ccoOZ1IFZnu85WCtfD1k27aHULgWFcA+2C8XspqwabTysDpvR/vjH2LyoXKm6kng                                                                                                                         
-      jQNtwmUO9TUZOpkFaveHvkkCgYEAmamtksbwSZ/+JH29lyKqduc1+RWGfDw43rHB                                                                                                                         
-      knvPE3b0xDPsBOsciNKDewVsvhtg45+tyb5C/UYqPp9UMyvpcFaAsHbRmFrBaj1e                                                                                                                         
-      Tq6xB5y3FNtA+kK/PeHzWz7eeg2xR3r4LKcmrHgUSYu6dqSP3kkibn+BczdkBM+p                                                                                                                         
-      ozGNiy0CgYBASGxZXg9aUah7ltFDp6ssg+6+NvILNabXMCPoATIb8plU14HpULND                                                                                                                         
-      zR4CUo1N33xQcHn8zTY7xNBT2rQi8F3ZvqTn9o6qgKfM/NhtMVxMP/TNOAfBfWUW                                                                                                                         
-      kLzqd1ecpi+zR7omS0Vi+UPmditzQrwJqQZJwvsjcU7zGI0WVt2nWQ==                                                                                                                                 
-      -----END RSA PRIVATE KEY-----                                                                                                                                                            
+      MIIEpQIBAAKCAQEAyi8KRGSWOqmJ9OdRQ8IiKEAsnAzhGuJ5LwIwdHDbnJgdPgBA
+      N8QPrS6yDRP3oW5tC9WnAnpXy6q5CIujvUsSuMCosES3QW+JuDFx7ryJDYpQL+Iv
+      vRAJ2B8FOk+RSIF+dr57uWziSWnft1Cx0zq5v7ku+gYBaru6lIherJ0K6XRgqTiU
+      VuIaSlTGLgaCaESrQZJYX4G+5iDqxk9LXUxfTsDiqEmAI9QIFYwJbkEmYDwvwtqy
+      88dYVBeROyMrk8h9i1NBuyWrsPvXMVKb2I33WSQpaSN2R1ABakwOUEx9Et+IWmVL
+      fdh/1HQQqunKFOF7sf66BeIEe3dd4bn2PAb8vwIDAQABAoIBAGtQ4KBAy8TDbKiD
+      h4zxpHO87HDAHVPJ1gzvmoyTwt2xmAPq2is/dBq2aGesq4oSNOtNMmKMUcGXErPI
+      etbk3EEYcfFt599htrX/+LuBczWurrVb138A3ljKzlmPFkxn/5pDrSRU+R+ChO6m
+      dFzsFOABCUBIo8PldTmV0LrKeJpE6x0PXD09X+Cb5YBS78O7SrS03blvJOosrkGj
+      Ivl/m1vVXQk+6Ic8niEiviiTIyFqwX09t3ATYEAjr1dS0odQII59XwqPnyQ7NKdS
+      mpKMOq9mLMUf+uzhMnRS0EWj6KxO4sopq758hwL5P+l5qI8nVEg7Kp/bZqyhTAYs
+      HG+cRXECgYEA9vXtjemOAfTX2bUWboPUEdQAEkmnC0bDkBguc93RTnQRPYtVE+Sq
+      g1WCxaJUhpU8KidbvXCvBJBz9HW22YERVG86poYUbkZsfg4wKJwugciojVPqescG
+      1uayvVXmtznIBgs+BXwForYDrRcOA+n3CVNtDmDClgUJq1/KZUkqKLsCgYEA0ZWL
+      GaUk5ixWJ3o+mcC1yb/DU9wXnoVncq8PXckVgF2/5xAAuq5O8BRpSz/LRirkcoZZ
+      6Evdb5I28vSnX2CwicbYwrZhOQf8tyBI3couLCLeC9TWi1bd6rKo1wvSsBtqvANR
+      6fD70II+YiyJjlHGDUkZRC5BZeVr4dEiqiJarc0CgYEAiow35Ji1yZUyD3pPhlrA
+      ++uCyr+1Tlc52bonPWuhRDFLhsqHRWzQ2HN9tSC36PUKVt/T0PjJx3a/BtOPbIDD
+      Vyo7rjakeaVasnGFRRMx6C/Jl9gPQSgtRx0QA7aQhBSPigx+lBcbFkik0VOQ0lNM
+      +1dpZFqWcBGNdi58XsxoMYcCgYEAg4JlpTLmA3RAn0bqrwmoSC8G/sD1JSgqcGD+
+      sGe0ETdCale1TW6A4866/1fJUn8pl99L3SJ1kUPbLPptZ8DBJcLbUtqkCOhFIBen
+      AVyTOmiqkhv8f7SDTXjLzxyBGLYrdExVAwmOyRhg0rOFoQMY1k9PBmRL7wdVeX4E
+      VWN3KOUCgYEAg5zSXQ4Xfj4I9nl+D7ijxtkhzgww8cK/EVseA+DO9C27GiFxvVhu
+      LgQV4ozXNzp2O4PDpXylwjEDRXQff2C9b7/nktU2htTZK/9VDAt1gfwi+WdwW9ma
+      cYjj7jaP6ErMcN0wxOf38HFpgTe4OwRfwsdJuaQhyPjz4Rv0doANp6U=
+      -----END RSA PRIVATE KEY-----
   xtrabackup:
     server:
       enabled: false
       backup_dir: /srv/volumes/backup/xtrabackup
+  mysql:
+    client:
+      backup_dir: /srv/volumes/backup/backupninja

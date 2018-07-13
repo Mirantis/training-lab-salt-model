@@ -2,7 +2,7 @@ classes:
 - system.linux.system.repo.mcp.extra
 - system.linux.system.repo.mcp.apt_mirantis.openstack
 - system.linux.system.repo.mcp.apt_mirantis.ubuntu
-- system.linux.system.repo.mcp.apt_mirantis.saltstack_2016_3
+- system.linux.system.repo.mcp.apt_mirantis.saltstack
 - system.linux.system.repo.mcp.apt_mirantis.glusterfs
 - system.glusterfs.client.cluster
 - system.glusterfs.client.volume.salt_pki
@@ -10,7 +10,6 @@ classes:
 - system.nginx.server.proxy.cicd.gerrit
 - system.nginx.server.proxy.cicd.jenkins
 - system.nginx.server.proxy.openstack_api
-- system.nginx.server.proxy.openstack.glare
 - system.nginx.server.proxy.openstack_vnc
 - system.nginx.server.proxy.openstack_web
 - system.horizon.server.single
@@ -34,3 +33,8 @@ parameters:
       cert_file: /srv/salt/pki/${_param:cluster_name}/${salt:minion:cert:proxy:common_name}.crt
       chain_file: /srv/salt/pki/${_param:cluster_name}/${salt:minion:cert:proxy:common_name}-with-chain.crt
     cluster_vip_address: ${_param:openstack_proxy_address}
+  # wait for Gluster /srv/salt/pki mount before starting
+  nginx:
+    server:
+      wait_for_service:
+        - srv-salt-pki.mount

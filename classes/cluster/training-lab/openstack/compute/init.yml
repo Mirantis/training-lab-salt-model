@@ -1,10 +1,11 @@
 classes:
 - system.linux.system.repo.mcp.apt_mirantis.ubuntu
-- system.linux.system.repo.mcp.apt_mirantis.saltstack_2016_3
+- system.linux.system.repo.mcp.apt_mirantis.saltstack
 - system.linux.system.repo.mcp.apt_mirantis.openstack
 - system.linux.system.repo.mcp.extra
 - system.nova.compute.cluster
 - system.nova.compute.notification.messagingv2
+- system.nova.compute.libvirt.ssl
 - system.neutron.compute.cluster
 - system.linux.network.dynamic_hosts
 - cluster.training-lab.infra
@@ -22,6 +23,9 @@ parameters:
     nova_vncproxy_url: https://${_param:cluster_public_host}:6080
     primary_first_nic: eth1
     primary_second_nic: eth2
+  nova:
+    compute:
+      reserved_host_memory_mb: 900
 ## Best practice configure high speed interface for live migrations
 #  nova:
 #    libvirt:

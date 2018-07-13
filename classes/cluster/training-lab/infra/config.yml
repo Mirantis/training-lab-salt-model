@@ -4,7 +4,7 @@ classes:
 - system.linux.system.repo.mcp.apt_mirantis.openstack
 - system.linux.system.repo.mcp.apt_mirantis.ubuntu
 - system.linux.system.repo.mcp.apt_mirantis.glusterfs
-- system.linux.system.repo.mcp.apt_mirantis.saltstack_2016_3
+- system.linux.system.repo.mcp.apt_mirantis.saltstack
 - system.glusterfs.client.cluster
 - system.glusterfs.client.volume.salt_pki
 - system.salt.master.pkg
@@ -35,13 +35,16 @@ parameters:
     single_address: ${_param:infra_config_address}
     deploy_address: ${_param:infra_config_deploy_address}
     linux_system_codename: xenial
-    salt_api_password_hash: "$6$BbUpaTlx$Spn5yj1OW9CpZy.4Dt2adD8VRz7A4vUMkvLbauTmLafMSoB9weYPeBygnm4jHxcH6b/p3Fd91i9sS/Ikj7pKY0"
+    salt_api_password_hash: "$6$fMRUPImr$C6rlJBtp1sHQZydk0vz12FuQSxd/qM3fmsBV25O1ZAuJqCsR.uYV8c8117MESX/bVQWDNmswT7OYjF0ebkAcV/"
     salt_master_host: ${_param:infra_config_deploy_address}
     jenkins_git_url: 'git@cfg01:/home/repo'
     jenkins_gerrit_url: ${_param:jenkins_git_url}
-    salt_api_password: 0QpBut5ncFv0UHw62SrtQmyMiqQ7Ng5q
+    salt_api_password: E6qzI7mG8ZfHPaivUeptgNvFaH3mHcP3
     jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
     jenkins_pipeline_library_url: git@cfg01:/home/repo/mcp-ci/pipeline-library
+    http_proxy_address: ""
+    http_proxy_port: ""
+    http_proxy: ""
   linux:
     system:
       package:
@@ -78,16 +81,21 @@ parameters:
         engine: local
       node:
         infra_kvm_node01:
+          classes:
+          - cluster.training-lab.infra.glusterfs
           params:
             keepalived_vip_priority: 100
             linux_system_codename: xenial
         infra_kvm_node02:
+          classes:
+          - cluster.training-lab.infra.glusterfs
           params:
             keepalived_vip_priority: 101
             linux_system_codename: xenial
         infra_kvm_node03:
           classes:
           - cluster.${_param:cluster_name}.infra.backup.server
+          - cluster.training-lab.infra.glusterfs
           params:
             keepalived_vip_priority: 102
             linux_system_codename: xenial
@@ -147,4 +155,3 @@ parameters:
           params:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: xenial
-

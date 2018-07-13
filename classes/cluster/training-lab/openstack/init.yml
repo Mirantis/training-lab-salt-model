@@ -21,6 +21,8 @@ parameters:
     neutron_l3_ha: True
     neutron_tenant_network_types: "flat,vxlan"
 
+    cluster_internal_protocol: http
+
     galera_server_cluster_name: openstack_cluster
     galera_server_maintenance_password: ${_param:galera_server_maintenance_password_generated}
     galera_server_admin_password: ${_param:galera_server_admin_password_generated}
@@ -31,6 +33,7 @@ parameters:
     glance_service_host: ${_param:openstack_control_address}
     keystone_version: ${_param:openstack_version}
     keystone_service_host: ${_param:openstack_control_address}
+    keystone_service_protocol: ${_param:cluster_internal_protocol}
     heat_version: ${_param:openstack_version}
     heat_service_host: ${_param:openstack_control_address}
     heat_domain_admin_password: ${_param:heat_domain_admin_password_generated}

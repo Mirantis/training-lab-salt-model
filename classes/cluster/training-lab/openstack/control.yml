@@ -2,7 +2,7 @@ classes:
 - system.linux.system.repo.mcp.extra
 - system.linux.system.repo.mcp.apt_mirantis.openstack
 - system.linux.system.repo.mcp.apt_mirantis.ubuntu
-- system.linux.system.repo.mcp.apt_mirantis.saltstack_2016_3
+- system.linux.system.repo.mcp.apt_mirantis.saltstack
 - system.linux.system.repo.mcp.apt_mirantis.glusterfs
 - system.memcached.server.single
 - system.neutron.control.openvswitch.cluster
@@ -22,8 +22,8 @@ classes:
 - system.haproxy.proxy.listen.openstack.nova-placement
 - system.haproxy.proxy.listen.openstack.glare
 - system.glusterfs.client.cluster
-- system.glusterfs.client.volume.glance
 - system.glusterfs.client.volume.keystone
+- system.glusterfs.client.volume.glance
 - cluster.training-lab.infra
 - cluster.training-lab.openstack.networking.virtual
 parameters:
