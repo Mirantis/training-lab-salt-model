@@ -39,12 +39,27 @@ parameters:
             0:
               name: 'vlan 0'
               description: "Deploy VLAN"
+              mtu: 1450
               dhcp: True
               # FXIME: after refactoring domain module, it should
               # be fixed to exactly use FQDN, not only hostname
               primary_rack: "${linux:network:hostname}"
       machines:
-        <<LOAD_FROM_FILE>>
+      #   pruzicka-kvm01-pxe01:
+      #     pxe_interface_mac: 52:54:00:00:01:01
+      #     power_parameters:
+      #       power_address: qemu+tcp://10.0.0.11/system
+      #       power_type: virsh
+      #   pruzicka-kvm02-pxe01:
+      #     pxe_interface_mac: 52:54:00:00:02:01
+      #     power_parameters:
+      #       power_address: qemu+tcp://10.0.0.12/system
+      #       power_type: virsh
+      #   pruzicka-kvm03-pxe01:
+      #     pxe_interface_mac: 52:54:00:00:03:01
+      #     power_parameters:
+      #       power_address: qemu+tcp://10.0.0.13/system
+      #       power_type: virsh
     cluster:
       region:
         host: ${_param:deploy_address}:${_param:maas_cluster_region_port}
