@@ -51,6 +51,8 @@ parameters:
         libvirt-bin:
           version: latest
       service:
+        libvirt-guests:
+          status: dead
         libvirt-bin:
           status: dead
   jenkins:
