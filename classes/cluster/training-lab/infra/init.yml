@@ -8,6 +8,7 @@ classes:
 - cluster.training-lab.cicd
 #- cluster.training-lab.infra.proxy
 - cluster.training-lab.infra.secrets
+- system.openssh.server.team.services
 parameters:
   _param:
     # Don't set it "false" before you configure sudo policies and enable power users.
