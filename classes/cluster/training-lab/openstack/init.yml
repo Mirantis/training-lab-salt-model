@@ -110,6 +110,7 @@ parameters:
     openstack_gateway_node03_tenant_address: 10.0.2.8
 
     # OpenStack Compute
+    openstack_compute_node01_address: 10.0.0.21
     openstack_compute_rack01_single_subnet: 10.0.1
     openstack_compute_rack01_tenant_subnet: 10.0.2
     openstack_compute_rack01_hostname: cmp
