@@ -17,3 +17,4 @@ parameters:
     keepalived_vip_virtual_router_id: 69
     primary_first_nic: eth1
     primary_second_nic: eth2
+

@@ -8,18 +8,17 @@ classes:
 - cluster.training-lab.cicd
 #- cluster.training-lab.infra.proxy
 - cluster.training-lab.infra.secrets
-- system.openssh.server.team.services
 parameters:
   _param:
     # Don't set it "false" before you configure sudo policies and enable power users.
     linux_system_user_sudo: true
 
-    apt_mk_version: 2018.7.0-milestone1
+    apt_mk_version: nightly
     # TODO: Revert openstack repo part after refactoring here: https://mirantis.jira.com/browse/PROD-17500
     openstack_version: pike
-    jenkins_pipelines_branch: '${_param:apt_mk_version}'
-    salt_control_trusty_image: http://images.mirantis.com/ubuntu-14-04-x64-mcp${_param:apt_mk_version}.qcow2
-    salt_control_xenial_image: http://images.mirantis.com/ubuntu-16-04-x64-mcp${_param:apt_mk_version}.qcow2
+    jenkins_pipelines_branch: master 
+    salt_control_trusty_image: http://ci.mcp.mirantis.net:8085/images//ubuntu-14-04-x64-mcp${_param:apt_mk_version}.qcow2
+    salt_control_xenial_image: http://ci.mcp.mirantis.net:8085/images//ubuntu-16-04-x64-mcp${_param:apt_mk_version}.qcow2 
     infra_config_hostname: cfg01
     salt_minion_ca_host: ${_param:infra_config_hostname}.${_param:cluster_domain}
     # infra service addresses
@@ -38,18 +37,18 @@ parameters:
     tenant_vlan: 20
 
     deploy_network_netmask: 255.255.255.0
-    deploy_network_gateway: 10.0.0.11
+    deploy_network_gateway: 10.0.0.1
 
     # MaaS parameters
     infra_maas_node01_deploy_address: ${_param:infra_config_deploy_address}
     infra_maas_node01_hostname: ${_param:infra_config_hostname}
-    infra_kvm_address: 10.0.1.240
-    infra_kvm_node01_address: 10.0.1.241
-    infra_kvm_node02_address: 10.0.1.242
-    infra_kvm_node03_address: 10.0.1.243
-    infra_kvm_node01_deploy_address: 10.0.0.241
-    infra_kvm_node02_deploy_address: 10.0.0.242
-    infra_kvm_node03_deploy_address: 10.0.0.243
+    infra_kvm_address: 10.0.1.239
+    infra_kvm_node01_address: 10.167.4.241
+    infra_kvm_node02_address: 10.167.4.242
+    infra_kvm_node03_address: 10.167.4.243
+    infra_kvm_node01_deploy_address: 10.167.5.241
+    infra_kvm_node02_deploy_address: 10.167.5.242
+    infra_kvm_node03_deploy_address: 10.167.5.243
     infra_kvm_node01_hostname: kvm01
     infra_kvm_node02_hostname: kvm02
     infra_kvm_node03_hostname: kvm03
@@ -61,14 +60,12 @@ parameters:
       enabled: true
       type: eth
       proto: dhcp
-      mtu: 1450
     linux_single_interface:
       enabled: true
       type: eth
       proto: static
       address: ${_param:single_address}
       netmask: ${_param:control_network_netmask}
-      mtu: 1450
       name_servers:
         - ${_param:dns_server01}
         - ${_param:dns_server02}
@@ -77,7 +74,6 @@ parameters:
     minion:
       trusted_ca_minions:
         - ${_param:salt_minion_ca_host}
-
   linux:
     network:
       dhclient:
@@ -136,8 +132,13 @@ parameters:
       service:
         apt-daily.timer:
           status: dead
+          enabled: false
+        systemd-timesyncd:
+          status: dead
+          enabled: false
       package:
         python-msgpack:
           version: latest
         python-tornado:
           version: latest
+

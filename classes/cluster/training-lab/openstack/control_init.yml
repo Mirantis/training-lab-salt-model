@@ -11,6 +11,12 @@ classes:
 - system.keystone.client.service.cinder3
 - system.keystone.client.service.keystone
 parameters:
+  _param:
+    openstack_region: RegionOne
+    # Unversioned endpoint for pike, queens
+    keystone_public_path: "/"
+    keystone_internal_path: "/"
+    keystone_admin_path: "/"
   #TODO Need to research, implement and test moving keystone fernet repository from GlusterFS and use secured rsync to ship rotated keys across ctl nodes. PROD-18539
   linux:
     system:

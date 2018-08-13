@@ -20,7 +20,6 @@ classes:
 - system.heat.server.cluster
 - system.heat.server.notification.messagingv2
 - system.haproxy.proxy.listen.openstack.nova-placement
-- system.haproxy.proxy.listen.openstack.glare
 - system.glusterfs.client.cluster
 - system.glusterfs.client.volume.keystone
 - system.glusterfs.client.volume.glance
@@ -39,3 +38,5 @@ parameters:
     cluster_node03_hostname: ${_param:openstack_control_node03_hostname}
     cluster_node03_address: ${_param:openstack_control_node03_address}
     nova_vncproxy_url: https://${_param:cluster_public_host}:6080
+
+

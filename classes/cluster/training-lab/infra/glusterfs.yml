@@ -2,9 +2,9 @@ classes:
 - service.keepalived.cluster.single
 - system.glusterfs.server.cluster
 - system.glusterfs.server.volume.salt_pki
+- system.glusterfs.server.volume.backup
 - system.glusterfs.server.volume.glance
 - system.glusterfs.server.volume.keystone
-- system.glusterfs.server.volume.backup
 - cluster.training-lab.cicd.gluster
 parameters:
   _param:

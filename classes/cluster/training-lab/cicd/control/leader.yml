@@ -6,7 +6,6 @@ classes:
   - system.docker.swarm.stack.gerrit
   - system.docker.swarm.stack.jenkins
   # Jenkins
-  - system.jenkins.master.config
   - system.jenkins.client
   - system.jenkins.client.credential.gerrit
   - system.jenkins.client.credential.salt
@@ -30,10 +29,6 @@ classes:
 
 parameters:
   _param:
-    # Kqueen
-    # Using default mail server with default port 10025
-    mail_server_hostname: mail
-    kqueen_ui_mail_host: ${_param:mail_server_hostname}
     # Jenkins
     jenkins_slave_user: admin
     jenkins_client_user: admin

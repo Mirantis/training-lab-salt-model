@@ -26,3 +26,4 @@ parameters:
     cluster_node02_address: ${_param:openstack_database_node02_address}
     cluster_node03_hostname: ${_param:openstack_database_node03_hostname}
     cluster_node03_address: ${_param:openstack_database_node03_address}
+

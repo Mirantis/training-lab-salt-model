@@ -17,8 +17,7 @@ classes:
 - system.reclass.storage.system.openstack_proxy_cluster
 - system.reclass.storage.system.openstack_database_cluster
 - system.reclass.storage.system.openstack_message_queue_cluster
-- system.reclass.storage.system.openstack_control_upgrade_single
-- system.reclass.storage.system.openstack_compute_single
+#- system.reclass.storage.system.openstack_control_upgrade_single
 - system.reclass.storage.system.cicd_control_cluster
 - service.jenkins.client
 - system.jenkins.client.credential.salt
@@ -36,26 +35,16 @@ parameters:
     single_address: ${_param:infra_config_address}
     deploy_address: ${_param:infra_config_deploy_address}
     linux_system_codename: xenial
-    salt_api_password_hash: "$6$fMRUPImr$C6rlJBtp1sHQZydk0vz12FuQSxd/qM3fmsBV25O1ZAuJqCsR.uYV8c8117MESX/bVQWDNmswT7OYjF0ebkAcV/"
+    salt_api_password_hash: "$6$QPguDFLT$73L.n3jNefVAFxo7Q/AQRuVGSdfbHckOwZkVKYVxZO9IYsH7ZgHxtd3MoJ/0iIyz.C6uIYV7xj/jq7/R3nhlC1"
     salt_master_host: ${_param:infra_config_deploy_address}
     jenkins_git_url: 'git@cfg01:/home/repo'
     jenkins_gerrit_url: ${_param:jenkins_git_url}
-    salt_api_password: E6qzI7mG8ZfHPaivUeptgNvFaH3mHcP3
+    salt_api_password: z1sSe2jKR5BqKNE6yinDELT8zkvzB2Nn
     jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
     jenkins_pipeline_library_url: git@cfg01:/home/repo/mcp-ci/pipeline-library
     http_proxy_address: ""
     http_proxy_port: ""
     http_proxy: ""
-  linux:
-    system:
-      package:
-        libvirt-bin:
-          version: latest
-      service:
-        libvirt-guests:
-          status: dead
-        libvirt-bin:
-          status: dead
   jenkins:
     client:
       lib:
@@ -78,6 +67,18 @@ parameters:
       backup: true
     minion:
       backup: true
+# FIXME: This WA should be removed, after qemu\kvm\stacklight\etc system
+# packages will be splitted from openstack repo. PROD-21270
+  linux:
+    system:
+      repo:
+        mcp_maas:
+          pin:
+          # Explicity pin python3-django to Ubuntu-upstream repo, instead one
+          # from openstack repo. PROD-19812
+          - pin: 'release o=Ubuntu'
+            priority: 1110
+            package: 'python3-django'
   reclass:
     storage:
       data_source:
@@ -139,22 +140,23 @@ parameters:
         openstack_proxy_node02:
           params:
             linux_system_codename: xenial
-        # openstack_compute_rack01:
-        #   name: ${_param:openstack_compute_rack01_hostname}<<count>>
-        #   domain: ${_param:cluster_domain}
-        #   classes:
-        #   - cluster.${_param:cluster_name}.openstack.compute
-        #   repeat:
-        #     count: 100
-        #     start: 1
-        #     digits: 3
-        #     params:
-        #       single_address:
-        #         value: ${_param:openstack_compute_rack01_single_subnet}.<<count>>
-        #         start: 101
-        #       tenant_address:
-        #         value: ${_param:openstack_compute_rack01_tenant_subnet}.<<count>>
-        #         start: 101
-        #   params:
-        #     salt_master_host: ${_param:reclass_config_master}
-        #     linux_system_codename: xenial
+        openstack_compute_rack01:
+          name: ${_param:openstack_compute_rack01_hostname}<<count>>
+          domain: ${_param:cluster_domain}
+          classes:
+          - cluster.${_param:cluster_name}.openstack.compute
+          repeat:
+            count: 100
+            start: 1
+            digits: 3
+            params:
+              single_address:
+                value: ${_param:openstack_compute_rack01_single_subnet}.<<count>>
+                start: 101
+              tenant_address:
+                value: ${_param:openstack_compute_rack01_tenant_subnet}.<<count>>
+                start: 101
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            linux_system_codename: xenial
+

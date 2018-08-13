@@ -75,7 +75,6 @@ parameters:
     horizon_secret_key: ${_param:horizon_secret_key_generated}
     horizon_identity_host: ${_param:openstack_control_address}
     horizon_identity_encryption: none
-    horizon_identity_version: 2
     mongodb_server_replica_set: ceilometer
     mongodb_ceilometer_password: ${_param:mongodb_ceilometer_password_generated}
     mongodb_admin_password: ${_param:mongodb_admin_password_generated}
@@ -110,7 +109,6 @@ parameters:
     openstack_gateway_node03_tenant_address: 10.0.2.8
 
     # OpenStack Compute
-    openstack_compute_node01_address: 10.0.0.21
     openstack_compute_rack01_single_subnet: 10.0.1
     openstack_compute_rack01_tenant_subnet: 10.0.2
     openstack_compute_rack01_hostname: cmp
@@ -140,6 +138,10 @@ parameters:
     nginx_proxy_gerrit_server_site_port: 8070
     openstack_log_appender: true
     openstack_fluentd_handler_enabled: true
+    # Unversioned endpoint for pike, queens
+    keystone_public_path: "/"
+    keystone_internal_path: "/"
+    keystone_admin_path: "/"
     # Billing
     #keystone_billometer_password: ${_param:keystone_billometer_password_generated}
     #keystone_billometer_address: ${_param:billometer_service_host}

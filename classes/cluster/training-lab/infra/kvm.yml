@@ -6,14 +6,19 @@ classes:
 - system.linux.system.repo.mcp.apt_mirantis.saltstack
 - system.linux.system.repo.mcp.apt_mirantis.glusterfs
 - system.salt.control.virt
+- system.salt.control.cluster
 - system.salt.control.cluster.openstack_control_cluster
 - system.salt.control.cluster.openstack_proxy_cluster
 - system.salt.control.cluster.openstack_database_cluster
 - system.salt.control.cluster.openstack_message_queue_cluster
 #- system.salt.control.cluster.openstack_upgrade_single
 - system.salt.control.sizes.openstack.compact
+- system.salt.control.placement.openstack.compact
+- system.salt.control.sizes.ovs.compact
+- system.salt.control.placement.ovs.compact
 - system.salt.control.cluster.cicd_control_cluster
 - system.salt.control.sizes.cicd.compact
+- system.salt.control.placement.cicd.compact
 - cluster.training-lab.infra
 - cluster.training-lab.infra.networking.kvm
 parameters:
@@ -22,9 +27,10 @@ parameters:
     cluster_node01_address: ${_param:infra_kvm_node01_address}
     cluster_node02_address: ${_param:infra_kvm_node02_address}
     cluster_node03_address: ${_param:infra_kvm_node03_address}
-    deploy_nic: vxlan0
+    deploy_nic: eth0
     primary_first_nic: eth1
     primary_second_nic: eth2
+    salt_control_cluster_rng_backend: '/dev/urandom'
   salt:
     control:
       cluster:
@@ -77,4 +83,6 @@ parameters:
   #         # Password is cloudlab, comment out, configure your SSH key bellow
   #         # and disable password auth
   #         password: $6$0Qqj.6l.$T9k9Onm9pIDo6ULABVBRNogyizG.9CnwQ4bvI4xH.AWeIGHbLyFU87ejMTtKvAAyd3dncRYbeUV.VbnXJU2u./
+
+
 
