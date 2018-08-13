@@ -27,7 +27,7 @@ parameters:
     cluster_node01_address: ${_param:infra_kvm_node01_address}
     cluster_node02_address: ${_param:infra_kvm_node02_address}
     cluster_node03_address: ${_param:infra_kvm_node03_address}
-    deploy_nic: eth0
+    deploy_nic: vxlan0
     primary_first_nic: eth1
     primary_second_nic: eth2
     salt_control_cluster_rng_backend: '/dev/urandom'

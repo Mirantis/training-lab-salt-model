@@ -8,7 +8,7 @@ parameters:
   _param:
     maas_region_port: 5240
     maas_name: ${_param:infra_config_hostname}
-    maas_gateway: 10.0.0.1
+    maas_gateway: 10.0.0.241
   maas:
     region:
       commissioning_scripts:
@@ -38,6 +38,7 @@ parameters:
             0:
               name: 'vlan 0'
               description: "Deploy VLAN"
+              mtu: 1450
               dhcp: True
               # FXIME: after refactoring domain module, it should
               # be fixed to exactly use FQDN, not only hostname

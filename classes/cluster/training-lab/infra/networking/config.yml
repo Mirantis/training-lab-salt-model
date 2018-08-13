@@ -8,6 +8,7 @@ parameters:
           enabled: true
           type: eth
           proto: static
+          mtu: 1450
           address: ${_param:deploy_address}
           netmask: ${_param:deploy_network_netmask}
           gateway: ${_param:deploy_network_gateway}
