@@ -21,4 +21,3 @@ parameters:
     cluster_node02_address: ${_param:openstack_message_queue_node02_address}
     cluster_node03_hostname: ${_param:openstack_message_queue_node03_hostname}
     cluster_node03_address: ${_param:openstack_message_queue_node03_address}
-

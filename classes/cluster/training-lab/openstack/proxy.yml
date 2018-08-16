@@ -38,4 +38,3 @@ parameters:
     server:
       wait_for_service:
         - srv-salt-pki.mount
-

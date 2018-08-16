@@ -24,8 +24,15 @@ parameters:
         #   master: bond0
         br-mgm:
           enabled: true
-          type: bridge
+          # proto: static
           proto: dhcp
+          type: bridge
+          # address: ${_param:deploy_address}
+          # netmask: ${_param:deploy_network_netmask}
+          # gateway: ${_param:deploy_network_gateway}
+          # name_servers:
+          # - ${_param:dns_server01}
+          # - ${_param:dns_server02}
           use_interfaces:
           - ${_param:deploy_nic}
         # bond0:

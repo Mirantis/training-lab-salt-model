@@ -70,4 +70,3 @@ parameters:
         port: 3306
         name: heat_upgrade
         user: heat
-

@@ -4,38 +4,38 @@ default_context:
   alertmanager_notification_email_hostname: 127.0.0.1
   alertmanager_notification_email_password: password
   alertmanager_notification_email_port: '587'
-  alertmanager_notification_email_require_tls: 'True'
+  alertmanager_notification_email_require_tls: 'False'
   alertmanager_notification_email_to: jane.doe@example.org
   auditd_enabled: 'False'
   backup_private_key: |-
     -----BEGIN RSA PRIVATE KEY-----
-    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
+    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
     -----END RSA PRIVATE KEY-----
-  backup_public_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDAq0qBd3yX5DnsJLXMT1Xsf+oyQ0PvAWAPZWdpa1T7leRF0/yY824uUH+zDAKk1qeLjhqNxsavNc277sQBcTjzgd+Mpej86rugE1XUAfA0kAMavYeqW8Wc3N4Z86Wqg2Sbo+F9wajgQ11bTlycnsSdnknF9wKAHJI09y2L4e5HcorxdKfqLsLSx9TF2s9MrI4bk2CYAqBkp6mqTbfmImX+1aWGa/bGKE/8ha1TsnKes+LrSXBb7yqVcN2ajeAhaKWDRD1MAM3aMl6bG+PM//4wdsj7YOdM+e151lXYoGA9Y9IKPEpIdFFKXyi0kppgRu9XZeqpugdY7cTIhtjoaJLt
+  backup_public_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEtmz39APenGjNdoRxvy4JnfaNUvTAKSp/Tjnj+Xr/KfLR5U6U4dECEJvR0Pn7PnDNw/RAuB5HPYYfNSCq2vZw7k65k36GzYcklqVqM2X40mmlHZ8ASbvj3BtoPksCpGVGiIbRvGirAEowCz0px2/KjiOl3lCWhs0IOWv2pu+PDypQbfZN6G0wJObPLPnikpQMaKwDSaGPT0QC9tgzOr2/kDFSmb/PrQ336u/fhsLwjAv8Lm9W3r/JMLHjFPS5wPuOUEPgQrul1R5r20+MSFCkwz/AIyUe3DvUx4EkTQIxxTA8OQw+DzuyeMd+fxW2WLwPap7XtLWDTfN83B6CYbEl
   bmk_enabled: 'False'
   ceph_enabled: 'False'
   cicd_control_node01_address: 10.0.1.91
@@ -49,40 +49,40 @@ default_context:
   cicd_enabled: 'True'
   cicd_private_key: |-
     -----BEGIN RSA PRIVATE KEY-----
-    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
+    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
     -----END RSA PRIVATE KEY-----
-  cicd_public_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/i9XNu/PlGEDYoqAWBV59j1aSuQCh7FIRwzp5WPWlDwzVij4M/6uEXG4Je+wHWPoH7NkrwsOa7T4aYh062svgNKaPxr5dR4G7EhuTUeZxjRNHJOBDgMW/brVN3a67j3bYE4PgJ0Ntv0E3Yt2TEZskVULNdkjIgHbnXkMoGnTaaShNCOMlHDbi6VRAE0ceO7rO8d2caooPS3bcgRk/pmUTCb1k4ZPflxKiCNcTAmiqr7BphX+kqiVr7wQAFXjpo12VAecdDHJJZKoEMFwLxUL7pVyJdwNEVAXwOWfmkb+ZIXwgo3i5dewGolcjqtwwDdUfXwN6GRbZ+qsEMVEu/5e7
+  cicd_public_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJ1RIIg9Shyz2XAzogZiwiWLs82gxk5MwvQvwtSbvcRbAGcnYQTBZrEVWuqe/ETlbT8ZBUWvuH7s/6hvRc4BRU8Q6ZeU5F0gtxkYrey4T10s65h4LvzjuvBxMEcfJ/kMKf0cHUHdRFPT6LROmXfJh5TdNZiQd0DLtqRpyqN+dMNkVCDtpxfQEMMbuU5tLif1M7OpvejhCr0OFBowXQ2hevGBYjXgcLIZY1r10qKZUB/Wiog35q6MqrgRp2f2ZTcaLX6zB70IpPrY7Z49atLK1wcgNmCpE5/fLQ+4HjPs+90ohH0u4k8qywcyTRKcKsmYex1r02EuW/HARc3/j/WNbp
   cluster_domain: tng.mirantis.com
   cluster_name: training-lab
   compute_bond_mode: active-backup
   compute_padding_with_zeros: 'True'
   compute_primary_first_nic: eth1
   compute_primary_second_nic: eth2
-  context_seed: KEFpnpEwvAVfkSLExSDJuNXbF2Z5mWqiJFw6NF4RXAZwqHEPgdy6Yt5Fx2iG35Xp
+  context_seed: 4kW5jftShgm57GhhcnhSVtBRcbeTLHtkqugWxdKfAIs1EpXI4Gcftka7SFzGXSz0
   control_network_netmask: 255.255.255.0
   control_network_subnet: 10.0.1.0/24
   control_vlan: '10'
@@ -94,13 +94,13 @@ default_context:
   deploy_network_subnet: 10.0.0.0/24
   deployment_type: physical
   dns_server01: 8.8.8.8
-  dns_server02: 8.8.4.4
+  dns_server02: 1.1.1.1
   email_address: pruzicka@mirantis.com
   gainsight_service_enabled: 'False'
   gateway_primary_first_nic: eth1
   gateway_primary_second_nic: eth2
   infra_bond_mode: active-backup
-  infra_deploy_nic: eth0
+  infra_deploy_nic: vxlan0
   infra_kvm_vip_address: 10.0.1.239
   infra_primary_first_nic: eth1
   infra_primary_second_nic: eth2
@@ -111,19 +111,21 @@ default_context:
   local_repositories: 'False'
   maas_deploy_address: 10.0.0.15
   maas_deploy_network_name: deploy_network
-  maas_deploy_range_end: 10.0.0.230
+  maas_deploy_range_end: 10.0.0.200
   maas_deploy_range_start: 10.0.0.20
   maas_deploy_vlan: '0'
   maas_enabled: 'True'
   maas_fabric_name: deploy_fabric
   maas_hostname: cfg01
   mcp_common_scripts_branch: ''
-  mcp_version: nightly
+  mcp_version: 2018.8.0
   no_platform: 'False'
   nova_vnc_tls_enabled: 'False'
   offline_deployment: 'False'
   opencontrail_enabled: 'False'
-  openldap_enabled: 'False'
+  openldap_domain: deploy-name.local
+  openldap_enabled: 'True'
+  openldap_organisation: ${_param:cluster_name}
   openssh_groups: ''
   openstack_benchmark_node01_address: 10.0.1.95
   openstack_benchmark_node01_hostname: bmk01
@@ -191,13 +193,13 @@ default_context:
   public_host: ${_param:openstack_proxy_address}
   publication_method: email
   reclass_repository: https://github.com/Mirantis/mk-lab-salt-model.git
-  salt_api_password: z1sSe2jKR5BqKNE6yinDELT8zkvzB2Nn
-  salt_api_password_hash: $6$QPguDFLT$73L.n3jNefVAFxo7Q/AQRuVGSdfbHckOwZkVKYVxZO9IYsH7ZgHxtd3MoJ/0iIyz.C6uIYV7xj/jq7/R3nhlC1
+  salt_api_password: 0UjqEjfbhcNZfZUaadTYaQkyb51zYEwD
+  salt_api_password_hash: $6$KaSTClrj$xL6h3yei.l/L1spSMAzvIxvUJP21vxn1jG4aomHsvU2YV7ygLWRf0p80CJo2iDl383xtO1VluG1mXNfIY6bWQ.
   salt_master_address: 10.0.1.15
   salt_master_hostname: cfg01
   salt_master_management_address: 10.0.0.15
   shared_reclass_branch: ''
-  shared_reclass_url: https://github.com/Mirantis/reclass-system-salt-model
+  shared_reclass_url: https://github.com/Mirantis/reclass-system-salt-model.git
   sriov_network_subnet: 10.55.0.0/16
   stacklight_enabled: 'False'
   stacklight_version: '2'

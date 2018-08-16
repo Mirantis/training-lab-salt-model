@@ -36,11 +36,11 @@ parameters:
     single_address: ${_param:infra_config_address}
     deploy_address: ${_param:infra_config_deploy_address}
     linux_system_codename: xenial
-    salt_api_password_hash: "$6$QPguDFLT$73L.n3jNefVAFxo7Q/AQRuVGSdfbHckOwZkVKYVxZO9IYsH7ZgHxtd3MoJ/0iIyz.C6uIYV7xj/jq7/R3nhlC1"
+    salt_api_password_hash: "$6$KaSTClrj$xL6h3yei.l/L1spSMAzvIxvUJP21vxn1jG4aomHsvU2YV7ygLWRf0p80CJo2iDl383xtO1VluG1mXNfIY6bWQ."
     salt_master_host: ${_param:infra_config_deploy_address}
     jenkins_git_url: 'git@cfg01:/home/repo'
     jenkins_gerrit_url: ${_param:jenkins_git_url}
-    salt_api_password: z1sSe2jKR5BqKNE6yinDELT8zkvzB2Nn
+    salt_api_password: 0UjqEjfbhcNZfZUaadTYaQkyb51zYEwD
     jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
     jenkins_pipeline_library_url: git@cfg01:/home/repo/mcp-ci/pipeline-library
     http_proxy_address: ""
@@ -168,4 +168,3 @@ parameters:
         #   params:
         #     salt_master_host: ${_param:reclass_config_master}
         #     linux_system_codename: xenial
-

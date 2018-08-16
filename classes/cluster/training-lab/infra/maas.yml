@@ -26,7 +26,7 @@ parameters:
           gateway_ip: ${_param:maas_gateway}
           ipranges:
             1:
-              end: 10.0.0.230
+              end: 10.0.0.200
               start: 10.0.0.20
               type: dynamic
               subnet: ${maas:region:subnets:deploy_network:name}

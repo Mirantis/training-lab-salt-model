@@ -6,7 +6,6 @@ classes:
 - system.linux.system.repo.mcp.apt_mirantis.saltstack
 - system.linux.system.repo.mcp.apt_mirantis.glusterfs
 - system.salt.control.virt
-- system.salt.control.cluster
 - system.salt.control.cluster.openstack_control_cluster
 - system.salt.control.cluster.openstack_proxy_cluster
 - system.salt.control.cluster.openstack_database_cluster
@@ -30,7 +29,6 @@ parameters:
     deploy_nic: vxlan0
     primary_first_nic: eth1
     primary_second_nic: eth2
-    salt_control_cluster_rng_backend: '/dev/urandom'
   salt:
     control:
       cluster:
@@ -83,6 +81,4 @@ parameters:
   #         # Password is cloudlab, comment out, configure your SSH key bellow
   #         # and disable password auth
   #         password: $6$0Qqj.6l.$T9k9Onm9pIDo6ULABVBRNogyizG.9CnwQ4bvI4xH.AWeIGHbLyFU87ejMTtKvAAyd3dncRYbeUV.VbnXJU2u./
-
-
 
