@@ -78,7 +78,6 @@ parameters:
   openssh:
     server:
       permit_root_login: true
-    client:
       alive:
         interval: 0
   linux:
