@@ -44,7 +44,45 @@ parameters:
               # be fixed to exactly use FQDN, not only hostname
               primary_rack: "${linux:network:hostname}"
       machines:
-        <<LOAD_FROM_FILE>>
+        kvm01-pxe01:
+          pxe_interface_mac: "52:54:00:00:01:01"
+          interfaces:
+            nic01:
+              type: eth
+              name: eth0
+              mac: "52:54:00:00:01:01"
+              subnet: "${maas:region:subnets:deploy_network:name}"
+              mode: "dhcp"
+          power_parameters:
+            power_type: virsh
+            power_address: "qemu+tcp://${_param:infra_kvm_node01_deploy_address}/system"
+            power_id: "kvm01-pxe01"
+        kvm02-pxe01:
+          pxe_interface_mac: "52:54:00:00:02:01"
+          interfaces:
+            nic01:
+              type: eth
+              name: eth0
+              mac: "52:54:00:00:02:01"
+              subnet: "${maas:region:subnets:deploy_network:name}"
+              mode: "dhcp"
+          power_parameters:
+            power_type: virsh
+            power_address: "qemu+tcp://${_param:infra_kvm_node02_deploy_address}/system"
+            power_id: "kvm02-pxe01"
+        kvm03-pxe01:
+          pxe_interface_mac: "52:54:00:00:03:01"
+          interfaces:
+            nic01:
+              type: eth
+              name: eth0
+              mac: "52:54:00:00:03:01"
+              subnet: "${maas:region:subnets:deploy_network:name}"
+              mode: "dhcp"
+          power_parameters:
+            power_type: virsh
+            power_address: "qemu+tcp://${_param:infra_kvm_node03_deploy_address}/system"
+            power_id: "kvm03-pxe01"
     cluster:
       region:
         host: ${_param:deploy_address}

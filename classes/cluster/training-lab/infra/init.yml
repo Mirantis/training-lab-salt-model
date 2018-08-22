@@ -43,12 +43,12 @@ parameters:
     infra_maas_node01_deploy_address: ${_param:infra_config_deploy_address}
     infra_maas_node01_hostname: ${_param:infra_config_hostname}
     infra_kvm_address: 10.0.1.239
-    infra_kvm_node01_address: 10.167.4.241
-    infra_kvm_node02_address: 10.167.4.242
-    infra_kvm_node03_address: 10.167.4.243
-    infra_kvm_node01_deploy_address: 10.167.5.241
-    infra_kvm_node02_deploy_address: 10.167.5.242
-    infra_kvm_node03_deploy_address: 10.167.5.243
+    infra_kvm_node01_address: 10.0.1.241
+    infra_kvm_node02_address: 10.0.1.242
+    infra_kvm_node03_address: 10.0.1.243
+    infra_kvm_node01_deploy_address: 10.0.0.241
+    infra_kvm_node02_deploy_address: 10.0.0.242
+    infra_kvm_node03_deploy_address: 10.0.0.243
     infra_kvm_node01_hostname: kvm01
     infra_kvm_node02_hostname: kvm02
     infra_kvm_node03_hostname: kvm03
