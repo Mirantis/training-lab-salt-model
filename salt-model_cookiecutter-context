@@ -93,6 +93,7 @@ default_context:
   deploy_network_netmask: 255.255.255.0
   deploy_network_subnet: 10.0.0.0/24
   deployment_type: physical
+  physical_lab_setup: 'True'
   dns_server01: 8.8.8.8
   dns_server02: 1.1.1.1
   email_address: pruzicka@mirantis.com
@@ -129,11 +130,11 @@ default_context:
   openssh_groups: ''
   openstack_benchmark_node01_address: 10.0.1.95
   openstack_benchmark_node01_hostname: bmk01
-  openstack_cluster_size: compact
-  openstack_compute_count: '100'
+  openstack_cluster_size: minimal
+  openstack_compute_count: '2'
   openstack_compute_rack01_hostname: cmp
-  openstack_compute_rack01_single_subnet: 10.0.1
-  openstack_compute_rack01_tenant_subnet: 10.0.2
+  openstack_compute_single_address_ranges: 10.0.1.100-10.0.1.110
+  openstack_compute_tenant_address_ranges: 10.0.2.100-10.0.2.110
   openstack_control_address: 10.0.1.10
   openstack_control_hostname: ctl
   openstack_control_node01_address: 10.0.1.11
