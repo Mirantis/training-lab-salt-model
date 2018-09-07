@@ -7,8 +7,8 @@ salt model used in "training-lab": [https://github.com/Mirantis/training-lab](ht
 ```bash
 OUTPUT_DIRECTORY="/tmp/salt-model"
 # https://github.com/Mirantis/mk2x-cookiecutter-reclass-model/blob/master/contexts/openstack_ovs_full_virtual.yml
+# COOKIECUTTER_TEMPLATE="/tmp/cookiecutter-templates/contexts/openstack_ovs_full_virtual.yml"
 COOKIECUTTER_TEMPLATE="$HOME/data/github/training-lab-salt-model/salt-model_cookiecutter-context"
-COOKIECUTTER_TEMPLATE="/tmp/cookiecutter-templates/contexts/openstack_ovs_full_virtual.yml"
 MCP_RELEASE="2018.8.0"
 
 cd /tmp/
