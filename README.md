@@ -1,12 +1,14 @@
 # Training Lab - salt model
 
-salt model used in "training-lab": https://github.com/Mirantis/training-lab
+salt model used in "training-lab": [https://github.com/Mirantis/training-lab](https://github.com/Mirantis/training-lab)
 
 ## How to create the salt model
 
-```
+```bash
 OUTPUT_DIRECTORY="/tmp/salt-model"
+# https://github.com/Mirantis/mk2x-cookiecutter-reclass-model/blob/master/contexts/openstack_ovs_full_virtual.yml
 COOKIECUTTER_TEMPLATE="$HOME/data/github/training-lab-salt-model/salt-model_cookiecutter-context"
+COOKIECUTTER_TEMPLATE="/tmp/cookiecutter-templates/contexts/openstack_ovs_full_virtual.yml"
 MCP_RELEASE="2018.8.0"
 
 cd /tmp/
@@ -45,9 +47,9 @@ git commit -m "Added new shared reclass submodule"
 
 ## Check model
 
-Based on: https://github.com/Mirantis/pipeline-library/blob/master/src/com/mirantis/mk/SaltModelTesting.groovy
+Based on: [https://github.com/Mirantis/pipeline-library/blob/master/src/com/mirantis/mk/SaltModelTesting.groovy](https://github.com/Mirantis/pipeline-library/blob/master/src/com/mirantis/mk/SaltModelTesting.groovy)
 
-```
+```bash
 docker run --rm -it -u root:root -v $PWD:/salt-model -w /salt-model mirantis/salt:saltstack-ubuntu-xenial-salt-2017.7 bash
 
 CLUSTER_NAME="testcluster"
@@ -88,4 +90,3 @@ source_local_envs
 saltmaster_init
 verify_salt_minions
 ```
-
