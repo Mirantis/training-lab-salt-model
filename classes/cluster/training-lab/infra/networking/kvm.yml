@@ -60,27 +60,52 @@ parameters:
           use_interfaces:
           # - bond0.${_param:control_vlan}
           - vxlan1
+        vxlan1:
+          enabled: true
+          type: vlan
+          proto: manual
+          mtu: 1450
         br-public:
           enabled: true
           type: bridge
           proto: manual
           use_interfaces:
           - vxlan2
+        vxlan2:
+          enabled: true
+          type: vlan
+          proto: manual
+          mtu: 1450
         br-data:
           enabled: true
           type: bridge
           proto: manual
           use_interfaces:
           - vxlan3
+        vxlan3:
+          enabled: true
+          type: vlan
+          proto: manual
+          mtu: 1450
         br-storage:
           enabled: true
           type: bridge
           proto: manual
           use_interfaces:
           - vxlan4
+        vxlan4:
+          enabled: true
+          type: vlan
+          proto: manual
+          mtu: 1450
         br-storrepl:
           enabled: true
           type: bridge
           proto: manual
           use_interfaces:
           - vxlan5
+        vxlan5:
+          enabled: true
+          type: vlan
+          proto: manual
+          mtu: 1450
