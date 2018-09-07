@@ -83,7 +83,7 @@ parameters:
   linux:
     network:
       dhclient:
-        enabled: true
+        enabled: false
         request:
           - subnet-mask
           - broadcast-address
