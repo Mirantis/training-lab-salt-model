@@ -25,7 +25,7 @@ classes:
 - system.salt.control.sizes.cicd.minimal
 - system.salt.control.placement.cicd.minimal
 - cluster.training-lab.infra
-- cluster.training-lab.infra.networking.kvm
+#- cluster.training-lab.infra.networking.kvm
 parameters:
   _param:
     cluster_vip_address: ${_param:infra_kvm_address}
