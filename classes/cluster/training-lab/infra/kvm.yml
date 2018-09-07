@@ -11,13 +11,19 @@ classes:
 - system.salt.control.cluster.openstack_database_cluster
 - system.salt.control.cluster.openstack_message_queue_cluster
 #- system.salt.control.cluster.openstack_upgrade_single
-- system.salt.control.sizes.openstack.compact
-- system.salt.control.placement.openstack.compact
-- system.salt.control.sizes.ovs.compact
-- system.salt.control.placement.ovs.compact
+#- system.salt.control.sizes.openstack.compact
+#- system.salt.control.placement.openstack.compact
+#- system.salt.control.sizes.ovs.compact
+#- system.salt.control.placement.ovs.compact
+- system.salt.control.sizes.openstack.minimal
+- system.salt.control.placement.openstack.minimal
+- system.salt.control.sizes.ovs.minimal
+- system.salt.control.placement.ovs.minimal
 - system.salt.control.cluster.cicd_control_cluster
-- system.salt.control.sizes.cicd.compact
-- system.salt.control.placement.cicd.compact
+#- system.salt.control.sizes.cicd.compact
+#- system.salt.control.placement.cicd.compact
+- system.salt.control.sizes.cicd.minimal
+- system.salt.control.placement.cicd.minimal
 - cluster.training-lab.infra
 - cluster.training-lab.infra.networking.kvm
 parameters:
