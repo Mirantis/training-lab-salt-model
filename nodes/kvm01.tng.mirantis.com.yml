@@ -1,0 +1,17 @@
+classes:
+- cluster.training-lab.infra.config
+parameters:
+  _param:
+    deploy_address: 10.20.0.1
+    keepalived_vip_priority: 100
+    linux_system_codename: xenial
+    public_address: 172.16.230.114
+    salt_master_host: 10.20.0.2
+    single_address: 10.0.1.241
+    storage_address: 10.0.1.241
+  linux:
+    system:
+      name: kvm01
+      domain: mcplab.tld
+      cluster: default
+      environment: prd
