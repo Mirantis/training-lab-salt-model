@@ -155,9 +155,9 @@ parameters:
           classes:
           - cluster.${_param:cluster_name}.openstack.compute
           repeat:
-            count: 100
-            start: 1
-            digits: 3
+            count: 2
+            start: 0
+            digits: 0
             params:
               single_address:
                 value: ${_param:openstack_compute_rack01_single_subnet}.<<count>>
