@@ -1,3 +1,5 @@
+# This is obsolete...
+
 # Training Lab - salt model
 
 salt model used in "training-lab": [https://github.com/Mirantis/training-lab](https://github.com/Mirantis/training-lab)
